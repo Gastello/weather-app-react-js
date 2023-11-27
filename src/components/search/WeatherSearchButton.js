@@ -2,7 +2,7 @@ const WeatherSearchButton = (props) => {
   return (
     <button
       className="weather__button"
-      onClick={props.onClick}
+      onClick={props.getWeatherDateByCityNameHandler}
     >
       go
     </button>

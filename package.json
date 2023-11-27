@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gastello.github.io/weather-app-react-js",
   "name": "weather-app-react-js",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm start build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

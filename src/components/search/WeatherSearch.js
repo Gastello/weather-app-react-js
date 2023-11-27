@@ -4,8 +4,13 @@ import WeatherSearchInput from "./WeatherSearchInput";
 const WeatherSearch = (props) => {
   return (
     <div className="weather__search">
-      <WeatherSearchInput onChange={props.changeInputTextHandler} onKeyDown={props.getWeatherDateByCityNameHandler}/>
-      <WeatherSearchButton onClick={props.getWeatherDateByCityNameHandler} />
+      <WeatherSearchInput
+        changeInputTextHandler={props.changeInputTextHandler}
+        enterPressedHandler={props.enterPressedHandler}
+      />
+      <WeatherSearchButton
+        getWeatherDateByCityNameHandler={props.getWeatherDateByCityNameHandler}
+      />
     </div>
   );
 };

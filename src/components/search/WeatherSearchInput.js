@@ -4,8 +4,8 @@ const WeatherSearchInput = (props) => {
       type="text"
       placeholder=""
       className="weather__input"
-      onChange={props.onChange}
-      onKeyDown={props.onKeyDown}
+      onChange={props.changeInputTextHandler}
+      onKeyDown={props.enterPressedHandler}
     ></input>
   );
 };

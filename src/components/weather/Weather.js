@@ -2,9 +2,11 @@ import WeatherSearch from "../search/WeatherSearch";
 import WeatherInfo from "./WeatherInfo";
 import { useState } from "react";
 
+let cityName = "";
+
 export const Weather = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [cityName, setCityName] = useState("");
+
   const apiKey = "0d411bdca7b7fe9307c2d2e0f6ceb81f";
 
   const getWeatherDateByCityNameHandler = async () => {
@@ -16,19 +18,25 @@ export const Weather = () => {
         } else return {};
       })
       .then((response) => {
-        console.log(response)
+        console.log(response);
         setWeatherData(response);
       });
   };
 
+  const enterPressedHandler = (e) => {
+    if (e.key === "Enter") {
+      getWeatherDateByCityNameHandler();
+    }
+  };
   const changeInputTextHandler = (e) => {
-    setCityName(e.target.value);
+    cityName = e.target.value;
   };
   return (
     <div className="weather">
       <WeatherSearch
         getWeatherDateByCityNameHandler={getWeatherDateByCityNameHandler}
         changeInputTextHandler={changeInputTextHandler}
+        enterPressedHandler={enterPressedHandler}
       />
       {!!Object.keys(weatherData).length && (
         <WeatherInfo weatherData={weatherData} />
